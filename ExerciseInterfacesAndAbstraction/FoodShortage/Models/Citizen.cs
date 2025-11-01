@@ -1,0 +1,26 @@
+﻿using System;
+namespace FoodShortage.Models.Interfaces
+{
+	public class Citizen : IIdentifiable,IBirthable,IBuyer
+	{
+		public Citizen(string name, int age, string id, string birthDate)
+		{
+            Name = name;
+            Age = age;
+            Id = id;
+            BirthDate = birthDate;
+            Food = 0;
+		}
+
+        public string Name { get; }
+        public int Age { get; }
+        public string Id { get; }
+        public string BirthDate { get; }
+        public int Food { get; private set; }
+
+        public void BuyFood()
+        {
+            Food += 10;
+        }
+    }
+}
